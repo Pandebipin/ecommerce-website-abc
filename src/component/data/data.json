@@ -1,0 +1,94 @@
+[
+  {
+      "title": "General",
+      "icon": "bi-gear-fill",
+      "childrens": [
+          {
+              "title": "Home",
+              "icon": "bi-house-fill",
+              "path": "/"
+          },
+          {
+              "title": "About",
+              "icon": "bi-info-circle-fill",
+              "path": "/about"
+          },
+          {
+              "title": "Contact",
+              "icon": "bi-phone-fill"
+          
+          },
+          {
+              "title": "FAQ",
+              "icon": "bi-question-circle-fill"
+          }
+      ]
+  },
+  {
+    "title": "Orders",
+    "icon": "bi-question-circle-fill",
+    "path": "/orders"
+},
+{
+  "title": "Catogroise",
+  "icon": "bi-question-circle-fill",
+  "childrens":[
+    {
+    "title":"mobile",
+    "path":"/mobile"
+  },
+  {
+  "title":"Tablets",
+  "path":"/Tablets"
+  },
+  {
+  "title":"laptops",
+  "path":"/laptops"
+  },
+  {
+  "title":"headphones",
+  "path":"/headphones"
+  }
+]
+},
+  {
+      "title": "Account",
+      "icon": "bi-info-circle-fill",
+      "childrens": [
+          {
+              "title": "Login",
+              "path": "/login"
+          },
+          {
+              "title": "Register",
+              "path": "/register"
+          }
+      
+      ]
+  },
+  {
+      "title": "Profile",
+      "icon": "bi-person-fill",
+      "childrens": [
+          {
+              "title": "Profile",
+              "path": "/profile"
+          },
+  
+          {
+              "title": "Logout",
+              "path": "/logout"
+          }
+      ]
+  },
+  {
+      "title": "more",
+      "path":"/more"
+  },
+  {
+      "title": "Support",
+      "icon": "bi-question-circle-fill",
+      "path": "/support"
+  }
+
+]

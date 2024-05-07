@@ -1,0 +1,12 @@
+@media (max-width:"1500px") {
+  .catogery{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width:"700px") {
+  .catogery{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+@media (min-width:640px) {
+  .catogery{
+    flex-direction: row;
+    justify-content: between;
+    padding: 2rem;
+  }
+}
+@media (max-width:940px) {
+  .catogery{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+  }
+}
+@media (min-width:1000px) {
+  .catogery{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
+  }
+}
