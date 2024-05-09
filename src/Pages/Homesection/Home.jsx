@@ -35,7 +35,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="home">
+    <div className="home w-full">
       <div className="home_container">
         <div className="first-section w-full mt-0 py-0 text-white flex flex-col sm:flex-row justify-between gap-4 bg-[#F9FBFF]">
           <div className="w-full first-2 sm:w-1/2 lg:w-40% xl:w-34% h-auto min-h-[30vh] translate-x-0 pl-4">
@@ -426,7 +426,6 @@ const Home = () => {
               <h1 className="h1 font-semibold text-black text-5xl">
                 An easy way to{" "}
                 <span className="h1 text-purple-500">Buy products</span>{" "}
-                directly from your smartphone*.
               </h1>
             </div>
           </div>
