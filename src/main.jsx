@@ -11,7 +11,7 @@ import { store } from "./store/store.js";
 import Login from "./Pages/Login/Login.jsx";
 import Signup from "./Pages/Signup/Signup.jsx";
 import Catogroise from "./component/Catogroise/Catogroise.jsx";
-import "./i18.js";
+
 import SellProduct from "./component/sellProduct/SellProduct.jsx";
 import Cart from "./component/Cart/Cart.jsx";
 

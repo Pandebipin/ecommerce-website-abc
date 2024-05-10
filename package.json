@@ -27,8 +27,7 @@
     "css": "^3.0.0",
     "firebase": "^10.8.1",
     "firebase-tools": "^13.4.1",
-    "i18next": "^23.10.1",
-    "i18next-browser-languagedetector": "^7.2.0",
+   
     "install": "^0.13.0",
     "npm": "^10.5.0",
     "prop-types": "^15.8.1",

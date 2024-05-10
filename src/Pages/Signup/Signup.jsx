@@ -70,7 +70,7 @@ function Signup() {
   };
 
   return (
-    <div className="container flex flex-row text-center w-[28vw]  pb-3 items-start  justify-center ">
+    <div className="container flex flex-row text-center md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw]  pb-3 items-start  justify-center ">
       <div className="w-full flex flex-col  gap-2 bg-white rounded-xl p-4">
         <div className="flex flex-col p-2  w-full  gap-1">
           <h1 className="text-xl font-semibold">Create an aacount </h1>

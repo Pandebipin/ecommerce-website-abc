@@ -38,9 +38,9 @@ const Home = () => {
     <div className="home w-full">
       <div className="home_container">
         <div className="first-section w-full mt-0 py-0 text-white flex flex-col sm:flex-row justify-between gap-4 bg-[#F9FBFF]">
-          <div className="w-full first-2 sm:w-1/2 lg:w-40% xl:w-34% h-auto min-h-[30vh] translate-x-0 pl-4">
+          <div className="w-full first-2 lg:w-100% xl:w-100% h-auto min-h-[25vh] translate-x-0 pl-1">
             <img
-              className="rounded w-full object-cover sm:h-[40vh] lg:h-auto"
+              className="rounded w-full object-cover sm:h-[40vh]"
               src="images/main-banner-1.jpg"
               alt="img"
             />
@@ -57,102 +57,6 @@ const Home = () => {
                 >
                   Buy now
                 </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-4 w-full sm:w-1/2  ">
-            <div className="flex w-full">
-              <div class="w-full lg:w-2/4 xl:w-3/5 h-auto min-h-[50vh] translate-x-1 pr-4">
-                <img
-                  class="rounded w-full h-[25vh] sm:h-[30vh] lg:h-auto"
-                  src="images/catbanner-01.jpg"
-                  alt="img"
-                />
-                <div class="home_text top-0 py-3">
-                  <h2 class="sam-summer tracking-wide uppercase text-red-500">
-                    best sale
-                  </h2>
-                  <h2 class="sam-sale text-black font-sans">Laptop Max</h2>
-                  <p class="text-black pt-3">from $999.80 or $140.50</p>
-                  <div class="p-2 mt-2 flex align-middle items-center text-black w-full sm:w-[120px]">
-                    <button
-                      class="py-2 rounded bg-blue-500 text-white w-full"
-                      onclick="navigate('/login')"
-                    >
-                      Buy now
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="w-full lg:w-2/4 xl:w-3/5 h-auto min-h-[50vh] translate-x-1 pr-4">
-                <img
-                  class="rounded w-full h-[25vh] sm:h-[30vh] lg:h-auto"
-                  src="images/catbanner-01.jpg"
-                  alt="img"
-                />
-                <div class="home_text top-0 py-3">
-                  <h2 class="sam-summer tracking-wide uppercase text-red-500">
-                    best sale
-                  </h2>
-                  <h2 class="sam-sale text-black font-sans">Laptop Max</h2>
-                  <p class="text-black pt-3">from $999.80 or $140.50</p>
-                  <div class="p-2 mt-2 flex align-middle items-center text-black w-full sm:w-[120px]">
-                    <button
-                      class="py-2 rounded bg-blue-500 text-white w-full"
-                      onclick="navigate('/login')"
-                    >
-                      Buy now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex">
-              <div class="w-full lg:w-2/4 xl:w-3/5 h-auto min-h-[50vh] translate-x-1 pr-4">
-                <img
-                  class="rounded w-full h-[25vh] sm:h-[30vh] lg:h-auto"
-                  src="images/catbanner-01.jpg"
-                  alt="img"
-                />
-                <div class="home_text top-0 py-3">
-                  <h2 class="sam-summer tracking-wide uppercase text-red-500">
-                    best sale
-                  </h2>
-                  <h2 class="sam-sale text-black font-sans">Laptop Max</h2>
-                  <p class="text-black pt-3">from $999.80 or $140.50</p>
-                  <div class="p-2 mt-2 flex align-middle items-center text-black w-full sm:w-[120px]">
-                    <button
-                      class="py-2 rounded bg-blue-500 text-white w-full"
-                      onclick="navigate('/login')"
-                    >
-                      Buy now
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="w-full lg:w-2/4 xl:w-3/5 h-auto min-h-[50vh] translate-x-1 pr-4">
-                <img
-                  class="rounded w-full h-[25vh] sm:h-[30vh] lg:h-auto"
-                  src="images/catbanner-01.jpg"
-                  alt="img"
-                />
-                <div class="home_text top-0 py-3">
-                  <h2 class="sam-summer tracking-wide uppercase text-red-500">
-                    best sale
-                  </h2>
-                  <h2 class="sam-sale text-black font-sans">Laptop Max</h2>
-                  <p class="text-black pt-3">from $999.80 or $140.50</p>
-                  <div class="p-2 mt-2 flex align-middle items-center text-black w-full sm:w-[120px]">
-                    <button
-                      class="py-2 rounded bg-blue-500 text-white w-full"
-                      onclick="navigate('/login')"
-                    >
-                      Buy now
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
