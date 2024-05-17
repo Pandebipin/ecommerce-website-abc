@@ -1,5 +1,5 @@
 import React from "react";
-import { RatingBar } from "../../component/RatingBr/RatingBar";
+
 import { Text } from "../../component/Text";
 import "./Popular.css";
 
@@ -21,13 +21,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">iphone 15 promax</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -47,13 +41,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">headphone 15 promax</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -72,13 +60,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">Tab on boom</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -97,13 +79,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">tab promax</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -122,13 +98,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">tab 15 promax</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -147,13 +117,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">headphone rj</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -172,13 +136,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">watch p2</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -197,13 +155,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">speaker rk77</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐</h1>
               </div>
             </div>
           </div>
@@ -223,13 +175,7 @@ function Popular() {
               <div className="flex flex-col md:w-1/2 gap-2">
                 <Text className="text-gray-800">laptop(lenovo)</Text>
                 <Text className="font-md">$299</Text>
-                <RatingBar
-                  value={4}
-                  isEditable={true}
-                  color="#f6f7fb"
-                  activeColor="#fae952"
-                  size={24}
-                />
+                <h1>⭐⭐⭐⭐</h1>
               </div>
             </div>
           </div>

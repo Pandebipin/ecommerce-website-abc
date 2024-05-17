@@ -5,15 +5,15 @@ function Faq() {
   return (
     <div className="bg-gray-200 rounded p-4 ">
       <Accordian
-        title="Can i collect products securely"
+        title="Can I Collect Products Securely"
         answer="yes u will able to collect securely"
       />
       <Accordian
-        title="how can i payment for product"
+        title="How Can I Payment For Product"
         answer="u can payment through ur card and esewa too"
       />
       <Accordian
-        title="in which places it works(area)"
+        title="In Which Places It Works(area)"
         answer="u are able to buy our products in buddhabhumi wherever u want"
       />
     </div>

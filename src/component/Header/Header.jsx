@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Input from "../Input/Input.jsx";
 import { Text } from "../Text/index.jsx";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { auth, db } from "../../firebase.js";
 import { collection, getDocs } from "firebase/firestore";
-import { array } from "prop-types";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,13 +118,12 @@ function Header() {
                 <div className="absolute right-[-30px] top-12 flex justify-center mt-2 w-40 rounded-md shadow-lg ring-1 bg-gray-50 z-20 ring-black ring-opacity-5 divide-y">
                   <div className="py-1" role="menu">
                     <Link to={"/Account"}>
-                      <a
-                        href=""
+                      <h1
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
                       >
                         My Account
-                      </a>
+                      </h1>
                     </Link>
                     <a
                       href="#"
@@ -155,12 +153,9 @@ function Header() {
             </div>
           ) : (
             <Link to={!user && "/login"}>
-              <a
-                href="#"
-                className="border-1 rounded-md bg-blue-600 px-4 outline-none py-2 text-white"
-              >
+              <h1 className="border-1 rounded-md bg-blue-600 px-4 outline-none py-2 text-white">
                 Login
-              </a>
+              </h1>
             </Link>
           )}
 

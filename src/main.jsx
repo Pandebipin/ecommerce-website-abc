@@ -1,24 +1,25 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./Pages/NotFound.jsx";
-import ProductView from "./Pages/ProductView/ProductView.jsx";
-import Home from "./Pages/Homesection/Home.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
-import Login from "./Pages/Login/Login.jsx";
-import Signup from "./Pages/Signup/Signup.jsx";
-import Catogroise from "./component/Catogroise/Catogroise.jsx";
+import Loader from "./component/Loader/Loader.jsx";
+const ProductView = lazy(() => import("./Pages/ProductView/ProductView.jsx"));
+const Home = lazy(() => import("./Pages/Homesection/Home.jsx"));
+const Login = lazy(() => import("./Pages/Login/Login.jsx"));
+const Signup = lazy(() => import("./Pages/Signup/Signup.jsx"));
+const Catogroise = lazy(() => import("./component/Catogroise/Catogroise.jsx"));
+const SellProduct = lazy(() =>
+  import("./component/sellProduct/SellProduct.jsx")
+);
+const Cart = lazy(() => import("./component/Cart/Cart.jsx"));
+const Account = lazy(() => import("./Pages/Account/Account.jsx"));
+const Catogery = lazy(() => import("./test/Catogery.jsx"));
+const Allproducts = lazy(() => import("./test/Allproducts.jsx"));
 
-import SellProduct from "./component/sellProduct/SellProduct.jsx";
-import Cart from "./component/Cart/Cart.jsx";
-
-import Account from "./Pages/Account/Account.jsx";
-import Catogery from "./test/Catogery.jsx";
-import Allproducts from "./test/Allproducts.jsx";
-// import Loginpage from "./Pages/Loginpage/";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        // element: <Homepage />,
         element: <Home />,
       },
 
@@ -83,7 +83,15 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <Suspense
+        fallback={
+          <div className="font-bold text-5xl flex justify-center">
+            <Loader />
+          </div>
+        }
+      >
+        <RouterProvider router={router} />
+      </Suspense>
     </Provider>
   </React.StrictMode>
 );

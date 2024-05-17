@@ -23,13 +23,12 @@ const Cart = () => {
         }
       };
       fn();
-      console.log(productData);
+
       console.log(productData);
     });
   }, []);
 
   const handelRemoveCart = async ({ id }) => {
-    alert("clicked");
     auth.onAuthStateChanged((user) => {
       const fn = async () => {
         const removeDoc = doc(db, `cart-${user.uid}`, id);
@@ -40,6 +39,7 @@ const Cart = () => {
           .catch((e) => {
             console.log(e);
           });
+        // not possible to doing that in this case
       };
       fn();
     });
@@ -48,85 +48,142 @@ const Cart = () => {
   return (
     <>
       {auth.currentUser ? (
-        <div className="cart flex flex-row-reverse">
-          <div className="order_summary flex flex-col gap-2 p-4 bg-[#F9FAFB] w-[50%] overflow-hidden min-h-[50%] shadow-lg rounded-sm m-2">
-            <h3 className="p-3 text-xl text-gray-800 text-center capitalize">
-              Order summary
-            </h3>
-            <div className="flex justify-between px-4 py-2">
-              <p className="text-gray-700 capitalize font-medium">Subtotal</p>
-              <p className="price"></p>
-            </div>
-            <div className="flex justify-between px-4 py-2">
-              <p className="text-gray-700 capitalize font-medium">
-                Shipping estimate
-              </p>
-              <p className="price text-gray-700 capitalize font-medium">$99</p>
-            </div>
-            <div className="flex justify-between px-4 py-2">
-              <p className="text-gray-700 capitalize font-medium">
-                Tax estimate{" "}
-              </p>
-              <p className="price text-gray-700 capitalize font-medium">$99</p>
-            </div>
-            <div className="flex justify-between px-4 py-2">
-              <h4 className="text-gray-800 capitalize font-xl text-md">
-                {" "}
-                ordered total{" "}
-              </h4>
-              <p className="price text-gray-800 capitalize font-xl text-md">
-                $1111
-              </p>
-            </div>
-            <div className="btn w-full">
-              <button className="bg-[#4F46E5] w-full px-4 py-3 rounded-md shadow-sm text-white">
-                {" "}
-                checkout{" "}
-              </button>
-            </div>
-          </div>
-          <div className="flex w-[50%] flex-col gap-3 ">
+        <section className=" overflow-hidden justify-around md:items-start lg:items-start items-center flex lg:flex-row md:flex-col flex-col p-2 my-3">
+          <div className="container w-full bg-rd-500">
             {productData.map((product) => {
               return (
-                <div className=" flex justify-between p-2 max-w-[100%] flex-1 gap-3 shadow-sm rounded-sm">
-                  <div className="img flex gap-3 p-3">
-                    <img className="w-36 h-36" src={product.url} alt="" />
-                    <div className="">
-                      <h2 className="text-2xl text-gray800 font-medium p-2">
-                        {product.name}
-                      </h2>
-                      <div className="flex gap-3">
-                        <p className="px-1 py-2"> {product.brand} </p>
-                        <span className="text-3xl text-gray-400">| </span>
-                        <p className="px-1 py-2">${product.price}</p>
+                <div
+                  key={product.id}
+                  className=" md:w-[800px] col-span-12 xl:col-span-8 md:pr-8 pt-14 pb-2 lg:py-2 max-xl:max-w-3xl max-xl:mx-auto"
+                >
+                  <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-5 py-6  border-b border-gray-200 group">
+                    <div className="w-full md:max-w-[206px]">
+                      <img
+                        src={product.url}
+                        alt="perfume bottle image"
+                        className="mx-auto w-33 h-33"
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 w-full">
+                      <div className="md:col-span-2">
+                        <div className="flex flex-col max-[500px]:items-center gap-3">
+                          <h6 className="font-semibold text-base leading-7 text-black">
+                            {product.name}
+                          </h6>
+                          <h6 className="font-normal text-base leading-7 text-gray-500">
+                            {product.brand}
+                          </h6>
+                          <h6 className="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600">
+                            Rs.{product.price}
+                          </h6>
+                          <h1
+                            onClick={handelRemoveCart}
+                            className="cursor-pointer text-xl font-bold bg-red-500 text-white w-20 flex items-center px-1 rounded-sm"
+                          >
+                            remove
+                          </h1>
+                        </div>
+                      </div>
+                      <div className="flex items-center max-[500px]:justify-center h-full max-md:mt-3">
+                        <div className="flex items-center h-full">
+                          <button className="group rounded-l-xl px-5 py-[18px] border border-gray-200 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:border-gray-300 hover:shadow-gray-300 focus-within:outline-gray-300">
+                            <svg
+                              className="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="22"
+                              height="22"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                            >
+                              <path
+                                d="M16.5 11H5.5"
+                                stroke=""
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d="M16.5 11H5.5"
+                                stroke=""
+                                strokeOpacity="0.2"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d="M16.5 11H5.5"
+                                stroke=""
+                                strokeOpacity="0.2"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                          </button>
+                          <input
+                            type="text"
+                            className="border-y border-gray-200 outline-none text-gray-900 font-semibold text-lg w-full max-w-[73px] min-w-[60px] placeholder:text-gray-900 py-[15px]  text-center bg-transparent"
+                            placeholder="1"
+                          />
+                          <button className="group rounded-r-xl px-5 py-[18px] border border-gray-200 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:border-gray-300 hover:shadow-gray-300 focus-within:outline-gray-300">
+                            <svg
+                              className="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="22"
+                              height="22"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                            >
+                              <path
+                                d="M11 5.5V16.5M16.5 11H5.5"
+                                stroke=""
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d="M11 5.5V16.5M16.5 11H5.5"
+                                stroke=""
+                                strokeOpacity="0.2"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                              <path
+                                d="M11 5.5V16.5M16.5 11H5.5"
+                                stroke=""
+                                strokeOpacity="0.2"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="text-xl font-bold">
-                    <span> {product.count}</span>
-                  </div>
-                  <div className="text-xl">
-                    <button
-                      className="text-xl"
-                      onClick={() => handelRemoveCart({ id: product.id })}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-x"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               );
             })}
           </div>
-        </div>
+          <div className="container ">
+            <div className="col-span-12 z-10 xl:col-span-4 bg-gray-50  max-xl:px-6 max-w-3xl xl:max-w-lg mx-auto lg:pl-8 py-24">
+              <h2 className="font-manrope font-bold text-3xl leading-10 text-black pb-8 border-b border-gray-300">
+                Order Summary
+              </h2>
+              <div className="mt-8">
+                <form>
+                  <div className="flex items-center justify-between py-8">
+                    <p className="font-medium text-xl leading-8 text-black">
+                      82
+                    </p>
+                    <p className="font-semibold text-xl leading-8 text-indigo-600">
+                      $120.90
+                    </p>
+                  </div>
+                  <button className="w-full text-center bg-indigo-600 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-indigo-700">
+                    Checkout
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       ) : (
         <Signup />
       )}

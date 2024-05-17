@@ -144,12 +144,12 @@ function Signup() {
         <p>
           Already have an account ?{" "}
           <Link to={"/login"}>
-            <a
+            <h1
               href=""
               className="text-black text-decoration-none underline hover:text-blue-700"
             >
               sigin
-            </a>
+            </h1>
           </Link>
         </p>
       </div>

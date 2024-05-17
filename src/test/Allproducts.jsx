@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import Sidebar from "./Sidebar";
+import { useNavigate } from "react-router-dom";
 
 const Allproducts = () => {
   const [productData, setProductData] = useState([]);
@@ -21,16 +22,21 @@ const Allproducts = () => {
     };
 
     fetchData();
+    window.scroll(0, 0);
   }, []);
-  console.log(productData);
+  const navigate = useNavigate();
   const [state, setState] = useState(false);
   return (
-    <div className="flex gap-7 min-h[100vh] pb-6">
+    <div className="flex gap-7 min-h[100vh]">
       <Sidebar state={state} setState={setState} />
       <div className=" grid sm:grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-center items-center gap-1 ">
         {productData.map((p) => {
           return (
-            <div className="card flex flex-col w-[18rem] h-[20rem] mix-blend-multiply border-none bg-gray-100 cursor-pointer gap-2 p-4 py-2">
+            <div
+              key={p.id}
+              onClick={() => navigate(`/productView/${p.id}`)}
+              className="card flex flex-col w-[18rem] h-[20rem] mix-blend-multiply border-none bg-gray-100 cursor-pointer gap-2 p-4 py-2"
+            >
               <img
                 className="w-33 h-[11rem] mix-blend-multiply"
                 src={p.url}
@@ -41,17 +47,9 @@ const Allproducts = () => {
                   {p.productName}
                 </h5>
                 <p className="card-text font-sans font-medium">
-                  {p.productPrice}
+                  Rs.{p.productPrice}
                 </p>
                 <p>⭐⭐⭐</p>
-                {/* <div className="py-2">
-                <a
-                  href=""
-                  className="flex bg-blue-500 text-white justify-center py-1 rounded-md"
-                >
-                  read more
-                </a>
-              </div> */}
               </div>
             </div>
           );

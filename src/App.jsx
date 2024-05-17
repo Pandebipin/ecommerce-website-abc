@@ -7,13 +7,10 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase.js";
 import { login, logout } from "./store/bucketSlice.js";
 import { useDispatch } from "react-redux";
-import { useTranslation } from "react-i18next";
-import Languageselect from "./component/Languageselect.jsx";
+
 function App() {
   const [loader, setloader] = useState();
   const dispatch = useDispatch();
-  const { t, ...props } = useTranslation();
-  const { part1, part2 } = useTranslation();
   auth.onAuthStateChanged((authuser) => {
     if (authuser) {
       const { uid, email, displayName } = authuser;
@@ -39,7 +36,9 @@ function App() {
       <Footer />
     </div>
   ) : (
-    <div className="flex justify-center font-bold mt-2">...loading</div>
+    <div className="flex justify-center text-5xl font-bold mt-2">
+      ...loading
+    </div>
   );
 }
 

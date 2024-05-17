@@ -3,11 +3,11 @@ import Button from "../../component/Button/Button";
 import { Text } from "../../component/Text";
 import Popular from "../../component/Popular/Popular";
 import Faq from "../../component/Faq/Faq";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import Slider from "../../component/Slider/Slider";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { Container } from "@mui/material";
 const Home = () => {
   const [productData, setProductData] = useState([]);
@@ -15,7 +15,9 @@ const Home = () => {
   const viewproduct = () => {
     navigate("/catogroise");
   };
-
+  const goinglogin = () => {
+    navigate("/login");
+  };
   useEffect(() => {
     const fn = async () => {
       const QuerySnapshot = await getDocs(collection(db, "products"));
@@ -33,7 +35,7 @@ const Home = () => {
   const uniqueCategories = [
     ...new Set(productData.map((item) => item.productCatogery)),
   ];
-
+  console.log(auth.currentUser);
   return (
     <div className="home w-full">
       <div className="home_container">
@@ -53,7 +55,7 @@ const Home = () => {
               <div className="p-2 mt-4 flex align-middle items-center text-black w-full sm:w-[150px]">
                 <button
                   className="px-4 py-2 rounded bg-blue-500 text-white w-full"
-                  onclick="navigate('/login')"
+                  onClick={auth.currentUser ? goinglogin : null}
                 >
                   Buy now
                 </button>
@@ -418,9 +420,11 @@ const Home = () => {
             </span>
           </div>
           <div className="mt-6">
-            <button className="button rounded px-3 py-2 text-white bg-">
-              Contact Support
-            </button>
+            <Link to={"/contact"}>
+              <button className="button rounded px-3 py-2 text-white bg-">
+                Contact Support
+              </button>
+            </Link>
           </div>
         </div>
         <div className="faq2nd p-4">
